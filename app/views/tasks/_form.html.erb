@@ -1,0 +1,11 @@
+<%= form_for(task) do |f| %>
+  <%= f.label :content, 'メッセージ' %>
+  <%= f.text_field :content %>
+  
+  <%= f.label :status, ステータス%>
+  <%= f.input :status %>
+
+  <%= f.submit '追加' %>
+<% end %>
+
+<%= link_to '一覧に戻る', tasks_path %>

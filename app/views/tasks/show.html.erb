@@ -1,6 +1,7 @@
 <h1>id: <%= @task.id %>の詳細ページ</h1>
 
-<p><%= @task.content %><p>
+<p><%= @task.content %></p>
+<p><%= @task.status %></p>
     
     <%= link_to '一覧に戻る', messages_path %>
     <%= link_to 'このメッセージを編集する', edit_message_path(@message) %>
