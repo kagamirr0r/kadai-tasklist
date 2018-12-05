@@ -1,11 +1,28 @@
+<div class="row">
+<div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
 <%= form_for(task) do |f| %>
-  <%= f.label :content, 'タスク' %>
-  <%= f.text_field :content %>
-  <br>
-  <%= f.label :status, 'ステータス'%>
-  <%= f.text_field :status %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% task.errors.full_messages.each do |task| %>
+          <li><%= task %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
 
-  <%= f.submit '追加' %>
-<% end %>
+  <div class="form-group">
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
 
-<%= link_to '一覧に戻る', tasks_path %>
+  <div class="form-group">
+    <%= f.label :content, 'メッセージ' %>
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+
+  <%= f.submit '投稿', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+</div>
