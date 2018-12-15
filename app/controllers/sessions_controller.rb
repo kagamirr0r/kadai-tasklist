@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
    
    if login(email,password)
     flash[:success]= 'ログインしました'
-    redirect_to @user
+    redirect_to root_url
    else
     flash[:danger]= 'メールアドレスかパスワードが違います'
     render 'new'
